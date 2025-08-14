@@ -8,10 +8,10 @@
      //rotation
      for(int i=0;i<nums.length;i++)
      {
-         int temp=nums[0];
+         int temp=nums[0];  
          for(int j=0;j<nums.length-1;j++)
          {
-            nums[j]=nums[j+1];
+            nums[j]=nums[j+1];    
          }
          
              nums[nums.length-1]=temp;

@@ -1,13 +1,22 @@
 class Solution {
     public int commonFactors(int a, int b) {
-      int count =0;
-      for(int i =1;i<=Math.min(a,b);i++)
-      {
-            if(a % i == 0 && b % i== 0)
-            {
-                count = count+1;
+        
+        int x = a, y = b;
+        while (y != 0) {
+            int temp = x % y;
+            x = y;
+            y = temp;
+        }
+        int gcd = x; 
+        int count = 0;
+        for (int i = 1; i * i <= gcd; i++) {
+            if (gcd % i == 0) {
+                count++; 
+                if (i != gcd / i) {
+                    count++; 
+                }
             }
-      }
-      return count;  
+        }
+        return count;
     }
 }

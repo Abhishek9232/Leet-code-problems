@@ -7,6 +7,7 @@ class Solution {
             nums1[i]=nums2[j];
             i++;
         }
-        Arrays.sort(nums1);
+      Arrays.sort(nums1);
+
     }
 }

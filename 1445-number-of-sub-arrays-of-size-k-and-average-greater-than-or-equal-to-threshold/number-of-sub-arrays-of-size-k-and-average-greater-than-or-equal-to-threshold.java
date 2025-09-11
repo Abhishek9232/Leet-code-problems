@@ -1,13 +1,10 @@
 class Solution {
     public int numOfSubarrays(int[] arr, int k, int threshold) {
-        
-    
-       
-       // Code here
+         // Code here
        int n= arr.length;
        int i =0,j=0;
        int count =0;
-       double sum=0.0;
+       int sum=0;
        while(j<n)
        {
            sum = sum +arr[j];

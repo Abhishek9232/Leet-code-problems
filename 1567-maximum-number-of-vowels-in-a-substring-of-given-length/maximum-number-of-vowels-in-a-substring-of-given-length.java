@@ -5,14 +5,17 @@ class Solution {
     public int maxVowels(String s, int k) {
         int maxVowel=0;
         int left=0;
+        int right=0;
         int vowel=0;
-        for(int right=0;right<s.length();right++){
+        while(right<s.length())
+        {
             if(isVowel(s.charAt(right)))vowel++;
             if((right-left+1) == k){
                 maxVowel=Math.max(maxVowel,vowel);
                 if(isVowel(s.charAt(left)))vowel--;
                 left++;
             }
+            right++;
         }
         return maxVowel;
     }

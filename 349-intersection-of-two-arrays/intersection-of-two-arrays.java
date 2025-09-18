@@ -2,23 +2,23 @@ class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
        Set<Integer> set1 = new HashSet<>();
         Set<Integer> set2 = new HashSet<>();
-        Arrays.sort(nums1);
-        Arrays.sort(nums2);
-       
-        for(int i =0;i<nums1.length;i++)
+        for( int i :nums1)
         {
-            set1.add(nums1[i]);
+            set1.add(i);
         }
-         for(int i =0;i<nums2.length;i++)
+        for(int i:nums2)
         {
-            set2.add(nums2[i]);
+            if(set1.contains(i))
+            {
+                set2.add(i);
+            }
         }
-        set1.retainAll(set2);
-        Integer[] array = set1.toArray(new Integer[0]);
-         int arr[] = new int[set1.size()];
-        for(int i =0;i<set1.size();i++)
+        int arr[] = new int[set2.size()];
+        int i=0;
+        for(int j:set2)
         {
-            arr[i] = array[i];
+            arr[i] = j;
+            i++;
         }
         
         return arr;

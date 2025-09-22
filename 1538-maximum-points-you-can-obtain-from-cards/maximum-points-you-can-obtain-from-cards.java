@@ -8,8 +8,9 @@ class Solution {
         for(int i=0;i<k;i++)
         {
             lsum=lsum+cardPoints[i];
-            maxsum = lsum;
+            
         }
+        maxsum = lsum;
         int rindx=n-1;
         for(int j=k-1;j>=0;j--)
         {

@@ -12,7 +12,7 @@ class Solution {
         {
             count++;
         }
-        while(count>k)
+        if(count>k)
         {
             if(nums[l]==0)
             { 

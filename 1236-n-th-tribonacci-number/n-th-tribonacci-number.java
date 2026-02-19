@@ -1,23 +1,23 @@
 class Solution {
-    public int solve(int i,int [] dp)
-    {
-        if(i == 0)
+   
+    public int tribonacci(int n) {
+        if(n == 0)
         {
-            return i;
+            return 0;
         }
-        if(i == 1 || i ==2)
+        if(n == 1 || n == 2)
         {
             return 1;
         }
-        if(dp[i] != -1)
-        {
-            return dp[i];
-        }
-        return dp[i] = solve(i-1,dp) + solve (i-2,dp) + solve(i-3,dp);
-    }
-    public int tribonacci(int n) {
         int [] dp = new int[n+1];
-        Arrays.fill(dp,-1);
-        return solve(n,dp);
+        dp[0] = 0;
+        dp[1] = 1;
+        dp[2] = 1;
+        for(int i = 3;i<=n;i++)
+        {
+            dp[i] = dp[i-1] + dp[i-2] + dp[i-3];
+        }
+       
+        return dp[n];
     }
 }

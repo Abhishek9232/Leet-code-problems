@@ -1,26 +1,21 @@
 class Solution {
-    public int solve(int [] arr , int [] dp , int n)
+    public int solve(int [] nums , int i ,int [] dp)
     {
-        if(n == 0)
-        {
-            return arr[n];
-        }
-        if(n == -1)
+        if(i<=0)
         {
             return 0;
         }
-        if(dp[n] != -1)
+        if(dp[i]!= -1)
         {
-            return dp[n];
+            return dp[i];
         }
-        int pick = arr[n] + solve(arr,dp,n-2);
-        int npick = 0 + solve(arr,dp,n-1);
-        return dp[n] = Math.max(pick,npick);
+        return dp[i] =  Math.max(nums[i-1] + solve(nums,i-2,dp) , solve(nums,i-1,dp));
     }
     public int rob(int[] nums) {
-        int n = nums.length - 1;
-        int dp [] = new int[nums.length+1];
+        int n = nums.length;
+        int [] dp = new int[n+1];
         Arrays.fill(dp,-1);
-        return solve(nums,dp,n);
+
+       return  solve(nums,n,dp);
     }
 }

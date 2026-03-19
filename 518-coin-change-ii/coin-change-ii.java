@@ -15,7 +15,7 @@ class Solution {
       }
       else if(coins[n-1] > amount)
       {
-        return solve(coins,n-1,amount,dp);
+        return dp[n][amount] = solve(coins,n-1,amount,dp);
       }
       else
       {
